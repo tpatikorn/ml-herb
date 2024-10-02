@@ -36,16 +36,6 @@ def data():
     return render_template('Data.html')
 
 
-@bp.route('/scan')
-def scan():
-    return render_template('scan.html')
-
-
-@bp.route('/test')
-def test():
-    return render_template('test.html')
-
-
 @bp.route('/About')
 def about():
     return render_template('About.html')
@@ -166,4 +156,4 @@ app.register_blueprint(bp, url_prefix='/ml-herb')
 app.config['APPLICATION_ROOT'] = '/ml-herb'
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8083)
+    app.run(debug=True, port=8084)

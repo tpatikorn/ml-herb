@@ -3,59 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
     <link rel="stylesheet" href="{{ url_for("ml-herb.static", filename="css/Navbar.css") }}">
-    
-    <link rel="icon" type="image/jpg" size="256x256" href="images/883.jpg") }}">
+
+    <link rel="icon" type="image/jpg" href="{{ url_for("ml-herb.static", filename="images/logo2.jpg") }}">
 </head>
 <body>
-    <nav>
-        <div class="container">
-                <div class="nav-con">
-                    <div class="logo">
-                        <h3>ML-Herb</h3>
-                    </div>
+<nav>
+    <div class="container">
+        <div class="nav-con">
+            <div class="logo">
+                <h3>ML-Herb</h3>
+            </div>
 
-                    <ul class="topic" id="mymenu">
-                        <li class="Home" onclick="location.href='Home'">หน้าแรก</li>
-                        <li class="tutorials" onclick="location.href='Data'">สมุนไพร</li>
-                        <li class="about" onclick="location.href='About'">เกี่ยวกับ</li>
-                        <li class="evaluate" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSes3IoZd36qwuxx_QY1LyPGnu43QZjeNu9xbFsfhLvLOSvMCw/viewform?usp=sf_link'">แบบประเมิน</li>
-                            <!-- <ul>
-                                <li><a href="/Data">ทั้งหมด</a></li>
-                                <li><a href="#ราก">ราก</a></li>
-                                <li><a href="#ใบ">ใบ</a></li>
-                                <li><a href="#ลำต้น">ลำต้น</a></li>
-                                <li><a href="#ผล">ผล</a></li>
-                            </ul> -->
-                        <a href="camera" class="btn">เริ่มต้นใช้งาน</a>
-                    </ul>
-                
-                    <div class="ham-menu" onclick="toggleham(this)">
-                        <div class="bar1"></div>
-                        <div class="bar2"></div>
-                        <div class="bar3"></div>
-                    </div>
-                </div>
+            <ul class="topic" id="mymenu">
+                <li class="Home" onclick="location.href='Home'">หน้าแรก</li>
+                <li class="tutorials" onclick="location.href='Data'">สมุนไพร</li>
+                <li class="about" onclick="location.href='About'">เกี่ยวกับ</li>
+                <!--
+                <li class="evaluate" onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLSes3IoZd36qwuxx_QY1LyPGnu43QZjeNu9xbFsfhLvLOSvMCw/viewform?usp=sf_link'">แบบประเมิน</li>
+                -->
+                <!-- <ul>
+                    <li><a href="/Data">ทั้งหมด</a></li>
+                    <li><a href="#ราก">ราก</a></li>
+                    <li><a href="#ใบ">ใบ</a></li>
+                    <li><a href="#ลำต้น">ลำต้น</a></li>
+                    <li><a href="#ผล">ผล</a></li>
+                </ul> -->
+                <a href="camera" class="btn">เริ่มต้นใช้งาน</a>
+            </ul>
+
+            <div class="ham-menu" onclick="toggleham(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
         </div>
-    </nav>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-    <script>
+    </div>
+</nav>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+<script>
 
     function toggleham(x) {
         x.classList.toggle("change");
         let myMenu = document.getElementById('mymenu')
-        if (myMenu.className === 'topic'){
+        if (myMenu.className === 'topic') {
             myMenu.className += 'menu-active'
-        }else{
+        } else {
             myMenu.className = 'topic'
         }
-        }
+    }
 
-    </script>
+</script>
 </body>
 </html>
