@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0 auto;
+     background-image: url("/static/images/backgrond.jpg"); 
+     -webkit-background-size: cover; 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 45px 100px rgba(255, 252, 252, 0.649),
+    inset 0 0 0 1000px rgba(21, 60, 36, 0.834);
+    font-family: Arial, sans-serif;
+    }
+
+/* Button */
+.btn{
+    font-size: 16px;
+    font-weight: bold;
+    background: #09e769eb;
+    width: 120px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transfrom;
+    transition-property: box-shadow, transfrom;
+
+}
+.btn:hover, .btn:focus ,btn:active{
+    box-shadow: 0 0 20px rgb(170, 241, 119);
+    -webkit-transfrom: scale(1.1);
+    transform: scale(1.1);
+    background: #09e769eb;
+    color: #fff;
+}
+/* ******************************** */
+
+.container--1{
+    margin: 0 auto;
+    max-width: 80%;
+}
+h1{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgba(10, 61, 6, 0.864);
+    font-weight: 10px;
+}
+h2{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgba(244, 248, 244, 0.934);
+    font-weight: 10px;  
+    /* margin-left: 50px; */
+    margin-top: 40px;
+    align-items: center;
+}
+h5{
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgba(244, 248, 244, 0.934);
+    font-weight: 10px;  
+    margin-left: 20px;
+    margin-top: 30px;
+    align-items: center;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin: 0 auto;
+    margin-top: 20px;
+    align-items: center;
+    grid-gap: 20px;
+    /* padding-right: 20px; */
+}
+img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+h4{
+    /* position: absolute; */
+    /* top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);  */
+    position: absolute;
+    bottom: 3px;
+    color: white; /* สีข้อความ */
+    font-size: 20px; /* ขนาดตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
+    left: 10px;
+    background: rgba(27, 27, 27, 0.5);
+   
+}
+
+.card-box {
+    padding: 2px 16px;
+    margin: 0 auto;
+  
+} 
+.subtopic{
+    align-items: center;
+}
+.grid .box{
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    transition: 0.4s;
+    z-index: none;
+}
+.grid .box:hover{
+    transform:translateY(-15px) ;
+}
+.bg1{
+    background-image: url("https://puechkaset.com/wp-content/uploads/2015/11/%E0%B9%83%E0%B8%9A%E0%B8%A1%E0%B8%B0%E0%B8%81%E0%B8%A3%E0%B8%B9%E0%B8%94.jpg");
+    border-radius: 20px;
+}
+.bg2{
+    background-image: url("https://hd.co.th/system/redactor2_assets/images/23373/content_benefits-of-basil-and-caution.jpg");
+    border-radius: 20px;
+}
+.bg3{
+    background-image: url("https://www.simahealthcare.com/image/catalog/01-simaxray/ppp/581e7eb0-7afc-4e9c-9c33-0defd3c7a0a7.jpg");
+    border-radius: 20px;
+}
+.bg4{
+    background-image: url("https://medthai.com/wp-content/uploads/2013/07/Senna-siamea-1.jpg");
+    border-radius: 20px;
+}
+.bg5{
+    background-image: url("https://m.media-amazon.com/images/I/51OzkcJGYFL._AC_UF894,1000_QL80_.jpg");
+    border-radius: 20px;
+}
+.bg6{
+    background-image: url("https://shop-image.readyplanet.com/v4b5Z9g2lUv3EMw86bvWUe8q8iM=/500x500/6aaebe4013bd4a438269bec507ee3b92");
+    border-radius: 20px;
+}
+.bg7{
+    background-image: url("https://www.disthai.com/images/content/original-1634719995583.jpg");
+    border-radius: 20px;
+}
+.bg8{
+    background-image: url("https://medthai.com/wp-content/uploads/2013/07/Wildbetal-Leafbush-1.jpg");
+    border-radius: 20px;
+}
+.bg9{
+    background-image: url("https://prayod.com/wp-content/uploads/2019/10/%E0%B8%95%E0%B8%B3%E0%B8%A5%E0%B8%B6%E0%B8%87-2.jpg");
+    border-radius: 20px;
+}
+.bg10{
+    background-image: url("https://media.istockphoto.com/id/1220528826/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%82%E0%B9%88%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B9%81%E0%B8%A2%E0%B8%81%E0%B8%9A%E0%B8%99%E0%B8%9E%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B5%E0%B8%82%E0%B8%B2%E0%B8%A7.jpg?s=612x612&w=0&k=20&c=hVV_Rt19wH9lX7zRsvwIrQhvV60xn3pA8rGEfq3nDrY=");
+    border-radius: 20px;
+}
+.bg11{
+    background-image: url("https://static.thairath.co.th/media/dFQROr7oWzulq5Fa5nnB0G4svfUKtxKFgh8cFdJzTbvVOlhdRK97xb3yQ9s5HqJlPEP.jpg");
+    border-radius: 20px;
+}
+.bg12{
+    background-image: url("https://www.sgethai.com/wp-content/uploads/2021/10/turmeric-with-turmeric-paste-brown-pottery-800x603.jpg");
+    border-radius: 20px;
+}
+.bg13{
+    background-image: url("https://s.isanook.com/he/0/ud/1/7213/finger-root.jpg?ip/resize/w850/q80/jpg");
+    border-radius: 20px;
+}
+.bg14{
+    background-image: url("https://inwfile.com/s-j/9qzpuq.jpg");
+    border-radius: 20px;
+}
+
+.bg15{
+    background-image: url("https://2.bp.blogspot.com/-GaGWMK0Sntc/W86_XzQNqjI/AAAAAAAABqs/J1fEm2zRn0cLmCNNuvGpYTpL7a1fq9HDQCLcBGAs/s1600/product_4_0_pr-e1523166613558.jpg");
+    border-radius: 20px;
+}
+.bg16{
+    background-image: url("https://www.simahealthcare.com/image/catalog/01-simaxray/ppp/1.jpg");
+    border-radius: 20px;
+}
+.bg17{
+    background-image: url("https://shop-image.readyplanet.com/Glry6mvFBHmY_gxS9-Z37HYllgg=/506c7532b0f64cda994f14d161a4c853");
+    border-radius: 20px;
+}
+.bg18{
+    background-image: url("https://www.thailandplus.tv/wp-content/uploads/2020/08/%E0%B8%A1%E0%B8%B0%E0%B8%99%E0%B8%B2%E0%B8%A7.jpg");
+    border-radius: 20px;
+}
+.bg19{
+    background-image: url("https://static.thairath.co.th/media/Dtbezn3nNUxytg04agCzHTl25iVnXsOYEmEqdfvLwd3jB9.webp");
+    border-radius: 20px;
+}
+.bg20{
+    background-image: url("https://static.thairath.co.th/media/Dtbezn3nNUxytg04N1L767z8ih31FJ276XjgRdCHMFzgJh.webp");
+    border-radius: 20px;
+}
+
+
+/* *********Responsive mobie phone******* */
+
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 ;
+        align-items: center;
+        margin-top: 20px;
+        padding: 0;
+    }
+    .grid .box {
+        max-width: 100%;
+    }
+    .card-box {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .container--1{
+        max-width: 100%;
+    }
+    h2{
+        margin-left: 20px;
+    }
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid .box{
+        width: 150px;
+        max-height: auto;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .card-box {
+        max-width: 100%;
+        justify-content: center;
+    }
+    .container--1{
+        max-width: 100%;
+    }
+    h2{
+        margin-left: 20px;
+    }
+}

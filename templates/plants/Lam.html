@@ -1,0 +1,90 @@
+{% extends  "Navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Itim&family=Noto+Serif+Thai:wght@100..900&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>ใบขี้เหล็ก</title>
+    <link rel="stylesheet" href="{{ url_for("ml-herb.static", filename="css/Lam.css") }}">
+    <!-- <script src="Lam.js"></script> -->
+</head>
+<body>
+<div class="bg">
+    <div class="content-box">
+        <div class="container-box">   
+            <div class="card">
+                <h2>ใบขี้เหล็ก</h2>
+                <div class="cimg">
+                    <div class="slide-container">
+                        <div class="slide fade">
+                            <img src="https://th-test-11.slatic.net/p/972e76f88c2736bd1c7fed4d8d648935.png" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://puechkaset.com/wp-content/uploads/2016/06/%E0%B9%83%E0%B8%9A%E0%B8%82%E0%B8%B5%E0%B9%89%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B9%87%E0%B8%81.jpg" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="{{ url_for("ml-herb.static", filename="images/LINE_ALBUM_ใบขี้เหล็ก_๒๔๐๕๓๑_1.jpg") }}" style="width:100%">
+                        </div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="cdetail">
+                    <p class="hover-text">แตะเพื่อดูข้อความ</p>
+                    <div class="ddetail">
+                    <h4>ข้อมูลเบื่องต้น</h4>
+                    <p style="text-indent: 2.5em">
+                        เป็นใบประกอบแบบขนนก เรียงสลับกัน ใบเป็นสีเขียวเข้ม มีใบย่อยรูปรี 5-12 คู่ กว้างประมาณ 1.5 เซนติเมตร ยาวประมาณ 4 เซนติเมตร 
+                        ที่ปลายสุดเป็นใบเดี่ยว ปลายใบเว้าตื้น โคนใบมน ขอบและแผ่นใบเรียบ
+                    <h4>คุณสมบัติ</h4>
+                        <p style="text-indent: 2.5em">รสขม แก้ตกขาว แก้นิ่ว ขับปัสสาวะ รักษาอาการท้องผูก รักษาโรคบิด โรคเบาหวาน แก้ร้อนใน รักษาฝีมะม่วง รักษาโรคเหน็บชา 
+                        ลดความดันโลหิตสูง ขับพยาธิ เป็นยาระบาย รักษาอาการนอนไม่หลับ</p>
+                        </p>
+                    <h4>ข้อควรระวัง</h4>
+                        <p style="text-indent: 2.5em">การรับประทานขี้เหล็กในลักษณะที่นำใบขี้เหล็กไปตากแห้งแล้วบรรจุเป็นเม็ด อาจทำให้เกิดการ
+                        เสื่อมและการตายของเซลล์ตับ ทำให้เกิดโรคตับได้ ซึ่งการรับประทานขี้เหล็กอย่างปลอดภัย ต้องเลือกใบ
+                        ตั้งแต่ยอดอ่อนถึงใบขนาดกลาง และนำไปต้มให้เดือด เทน้ำทิ้งสัก 2-3 น้ำ แล้วค่อยนำมาปรุงอาหารหรือนำไปทำเป็นยา</p>
+                    </p>
+                    <h4>เมนูแนะนำ</h4>
+                    <p> - แกงขี้เหล็กปลาย่าง <br>
+                        - แกงป่าใบผักขี้เหล็ก 
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slides[slideIndex].style.display = "block"; 
+        }
+        </script>
+</div>
+</body>
+</html>
+{% endblock %}

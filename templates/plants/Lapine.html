@@ -1,0 +1,94 @@
+{% extends  "Navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Itim&family=Noto+Serif+Thai:wght@100..900&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>ตะไคร้</title>
+    <link rel="stylesheet" href="/css/Lam.css">
+    <!-- <script src="Lam.js"></script> -->
+</head>
+<body>
+<div class="bg">
+    <div class="content-box">
+        <div class="container-box">   
+            <div class="card">
+                <h2>ตะไคร้</h2>
+                <div class="cimg">
+                    <div class="slide-container">
+                        <div class="slide fade">
+                            <img src="https://media.istockphoto.com/id/494418873/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%95%E0%B8%B0%E0%B9%84%E0%B8%84%E0%B8%A3%E0%B9%89.jpg?s=612x612&w=0&k=20&c=RBKb3g-Npw8QqTXgb-nYaEkkdIsHa8RVZjYQfzluRGY=" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://www.picturethisai.com/wiki-image/1080/317756837508251648.jpeg" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://fth0.com/uppic/73102726/news/73102726_0_20210507-162210.jpg" style="width:100%">
+                        </div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="cdetail">
+                    <p class="hover-text">แตะเพื่อดูข้อความ</p>
+                    <div class="ddetail">
+                    <h4>ข้อมูลเบื่องต้น</h4>
+                    <p style="text-indent: 2.5em">
+                        ตะไคร้ เป็นพืชล้มลุกวงศ์เดียวกับหญ้า มักมีอายุมากกว่า 1 ปี (ขึ้นอยู่กับปัจจัยทางสภาพแวดล้อม) ลำต้นตะไคร้ มีเหง้าใต้ดิน ลำต้นมีลักษณะตั้งตรง รูปทรงกระบอก มีความสูงได้ถึง 1 เมตร (รวมทั้งใบ) 
+                        ส่วนของลำต้นที่เรามองเห็นจะเป็นส่วนของกาบใบที่ออกเรียงช้อนกันแน่น โคนต้นมีลักษณะกาบใบหุ้มหนา ผิวเรียบ และมีขนอ่อนปกคลุม/p>
+                    <h4>คุณสมบัติ</h4>
+                        <p style="text-indent: 2.5em">ลำต้นตะไคร้นำมาใช้แก้ปวด จากการปวดข้อและฟกช้ำ แก้โรคทางเดินปัสสาวะ แก้ประจำเดือนมาไม่ปกติ รวมถึงช่วยให้เจริญอาหาร แก้ท้องเสีย แก้ท้องอืด แก้จุกเสียด แน่นท้อง ขับลมในลำไส้</p>
+                        
+                    <h4>ข้อควรระวัง</h4>
+                        <p style="text-indent: 2.5em">การบริโภคตะไคร้ หรือ การใช้ตะไคร้ทาบนผิวหนังเพื่อจุดประสงค์ทางการรักษาโรค อาจจะปลอดภัยหากใช้ตะไคร้ในช่วงเวลาสั้นๆ
+                             ภายใต้การดูแล และคำแนะนำจากแพทย์ การสูดดมสารที่มีส่วนประกอบของตะไคร้ อาจทำให้เกิดผลข้างเคียงที่เป็นอันตราย และเป็นพิษต่อร่างกายได้ในผู้ป่วยบางราย 
+                       </p>
+                    </p>
+                    <h4>เมนูแนะนำ</h4>
+                    <p> - ยำปลาทู<br>
+                        - ไก่ผัดตะไคร้ 
+                   
+                   
+                   
+                        
+                     
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slides[slideIndex].style.display = "block"; 
+        }
+        </script>
+</div>
+</body>
+</html>
+{% endblock %}

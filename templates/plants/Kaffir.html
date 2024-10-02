@@ -1,0 +1,93 @@
+{% extends  "Navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Itim&family=Noto+Serif+Thai:wght@100..900&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>ใบมะกรูด</title>
+    <link rel="stylesheet" href="/css/Lam.css">
+    <!-- <script src="Lam.js"></script> -->
+</head>
+<body>
+<div class="bg">
+    <div class="content-box">
+        <div class="container-box">   
+            <div class="card">
+                <h2>ใบมะกรูด</h2>
+                <div class="cimg">
+                    <div class="slide-container">
+                        <div class="slide fade">
+                            <img src="https://png.pngtree.com/thumb_back/fw800/background/20220622/pngtree-bergamot-trees-kaffir-lime-leaves-placed-on-wooden-background-photo-image_31933984.jpg" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://shop-image.readyplanet.com/Zw1DKCeDs6PheF8GBnjxGqyLdPw=/53957f302b32450ba887a858856caa7f" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://png.pngtree.com/thumb_back/fw800/background/20220622/pngtree-bergamot-leaves-and-kaffir-lime-leaves-growing-together-on-a-tree-photo-image_31933986.jpg" style="width:100%">
+                        </div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="cdetail">
+                    <p class="hover-text">แตะเพื่อดูข้อความ</p>
+                    <div class="ddetail">
+                    <h4>ข้อมูลเบื่องต้น</h4>
+                    <p style="text-indent: 2.5em">
+                        เป็นใบประกอบ ออกเป็นใบเดี่ยว มีก้านใบแผ่ออกเป็นครีบคล้ายแผ่นใบ ใบมีลักษณะหนาเรียบ มีผิวมัน สีเขียว และเขียวเข้มตามอายุของใบ 
+                        ใบมีคอดกิ่วที่กลางใบทำให้ใบแบ่งออกเป็น 2 ตอน หรือ คล้ายใบไม้ 2 ใบ ต่อกัน ขนาดใบกว้างประมาณ 2.5-5 เซนติเมตร 
+                        ยาวประมาณ 5-12 เซนติเมตร ใบมีกลิ่นหอมมากเพราะมีต่อมน้ำมันอยู่</p>
+                    <h4>คุณสมบัติ</h4>
+                        <p style="text-indent: 2.5em">ช่วยแก้ไอ แก้อาการอาเจียนเป็นเลือด ช่วยแก้อาการช้ำใน ใบมะกรูดอุดมไปด้วยเบต้าแคโรทีนซึ่งช่วยในการชะลอการขยายตัวของเซลล์มะเร็งและช่วยต่อต้านมะเร็งได้</p>
+                        
+                    <h4>ข้อควรระวัง</h4>
+                        <p style="text-indent: 2.5em">การนำน้ำมันหอมระเหยจากใบมะกรูด ที่มีสารกลุ่มคูมาริน (Coumarin) ซึ่งเป็นสารประกอบอินทรีย์ที่พบในพืช 
+                            มาทาลงบนผิวหนังในปริมาณมาก อาจทำให้ผิวหนังผลิตเม็ดสีเพิ่มขึ้นเมื่อสัมผัสกับแสงแดดและอาจทำให้ผิวไวต่อแสงมากขึ้น 
+                            นอกจากนี้ การดื่มน้ำมะกรูดในขณะที่ท้องว่าง ยังอาจทำให้เกิดอาการเสียดท้อง แสบท้อง และปวดท้องได้ เนื่องจาก น้ำมะกรูดมีความเป็นกรดสูง</p>
+                    </p>
+                    <h4>เมนูแนะนำ</h4>
+                    <p> - เนื้อปูผัดพริกสดใบมะกรูด <br>
+                        - ต้มยำไข่เจียว<br>
+                        - หมูเด้งผัดพริกแกง
+                        
+                     
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slides[slideIndex].style.display = "block"; 
+        }
+        </script>
+</div>
+</body>
+</html>
+{% endblock %}

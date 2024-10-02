@@ -1,0 +1,93 @@
+{% extends  "Navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Itim&family=Noto+Serif+Thai:wght@100..900&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>มะม่วงหาวมะนาวโห่</title>
+    <link rel="stylesheet" href="/css/Lam.css">
+    <!-- <script src="Lam.js"></script> -->
+</head>
+<body>
+<div class="bg">
+    <div class="content-box">
+        <div class="container-box">   
+            <div class="card">
+                <h2>มะม่วงหาวมะนาวโห่</h2>
+                <div class="cimg">
+                    <div class="slide-container">
+                        <div class="slide fade">
+                            <img src="https://hd.co.th/system/redactor2_assets/images/22244/content_carissa-carandas-medicinal-benefits.jpg" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://s.isanook.com/he/0/ud/1/7905/manao-1.jpg?ip/crop/w670h402/q80/jpg" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://s.isanook.com/he/0/ud/1/7905/manao-2.jpg?ip/resize/w728/q80/jpg" style="width:100%">
+                        </div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="cdetail">
+                    <p class="hover-text">แตะเพื่อดูข้อความ</p>
+                    <div class="ddetail">
+                    <h4>ข้อมูลเบื่องต้น</h4>
+                    <p style="text-indent: 2.5em">
+                        มะม่วงหาว มะนาวโห่ มีลักษณะเป็นไม้พุ่มรอเลื้อย หรือ ไม้ต้นขนาดเล็ก เป็นไม้ไม่ผลัดใบ มีสีเขียวตลอดปี ผลมีลักษณะมีเนื้อสด (fleshy fruit) มี pericarp 
+                        เป็นเนื้อนุ่มรับประทานได้ ผลเป็นแบบ drupe (ผลไม้ที่มีเมล็ดแข็ง) ลักษณะรูปไข่ ขนาดกว้าง 12-17 มิลลิเมตร ยาว 15-23 มิลลิเมตร
+                         ผลเป็นผลเดี่ยวออกรวมกันเป็นช่อ ผลอ่อนจะมีสีชมพูอ่อนๆ และค่อยๆเข้มขึ้นเป็นสีแดง </p>
+                    <h4>คุณสมบัติ</h4>
+                        <p style="text-indent: 2.5em">ช่วยรักษาโรคเลือดออกตามไรฟัน แก้ท้องเสีย แม้ว่าจะมีผู้กล่าวอ้างถึงสรรพคุณของมะม่วงหาวมะนาวโห่มากมาย 
+                            แต่งานศึกษาวิจัยเกี่ยวกับสรรพคุณยังมีน้อยมาก และส่วนใหญ่งานวิจัยของมะม่วงหาวมะนาวโห่ยังทำในสัตว์ทดลอง
+                            ส่วนงานวิจัยในคนยังไม่ปรากฏงานที่เป็นที่น่าเชื่อถือมากนัก</p>
+                        
+                    <h4>ข้อควรระวัง</h4>
+                        <p style="text-indent: 2.5em">มีแร่ธาตุโพแทสเซียมค่อนข้างสูง กินมากไปอาจส่งผลต่อการเต้นของหัวใจได้ เพราะฉะนั้นเลยมีคำเตือนพ่วงท้ายว่า
+                            ผู้ป่วยโรคหัวใจทานได้ในปริมาณจำกัด ส่วนหญิงตั้งครรภ์ไม่ควรรับประทาน
+                       </p>
+                    </p>
+                    <h4>เมนูแนะนำ</h4>
+                    <p> - น้ำมะม่วงหาว มะนาวโห่<br>
+                        - มะม่วงหาวมะนาวโห่แช่อิ่ม
+                     
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slides[slideIndex].style.display = "block"; 
+        }
+        </script>
+</div>
+</body>
+</html>
+{% endblock %}

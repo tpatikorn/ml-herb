@@ -1,0 +1,96 @@
+{% extends  "Navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Itim&family=Noto+Serif+Thai:wght@100..900&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>ใบเตย</title>
+    <link rel="stylesheet" href="/css/Lam.css">
+    <!-- <script src="Lam.js"></script> -->
+</head>
+<body>
+<div class="bg">
+    <div class="content-box">
+        <div class="container-box">   
+            <div class="card">
+                <h2>ใบเตย</h2>
+                <div class="cimg">
+                    <div class="slide-container">
+                        <div class="slide fade">
+                            <img src="https://file.sogoodweb.com/upload/156/6qnEWW27j4.jpg" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://fth0.com/uppic/73102726/news/73102726_0_20210507-150454.jpg" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://www.bkkorganic.com/read_image.php?pid=197" style="width:100%">
+                        </div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="cdetail">
+                    <p class="hover-text">แตะเพื่อดูข้อความ</p>
+                    <div class="ddetail">
+                    <h4>ข้อมูลเบื่องต้น</h4>
+                    <p style="text-indent: 2.5em">
+                        เป็นพืชใบเลี้ยงเดี่ยว มีลำต้นทรงกลม และเป็นข้อสั้นๆถี่กัน โผล่ขึ้นมาจากดินเพียงเล็กน้อย โคนลำต้นแตกรากแขนงออกเป็นรากค้ำจุน หรือ เรียกว่า รากอากาศ
+                        ลำต้นสามารถแตกหน่อเป็นต้นใหม่ได้ ทำให้มองเป็นกอ หรือ เป็นพุ่มใหญ่ๆ ที่รวมความสูงของใบแล้วสามารถสูงได้มากกว่า 1 เมตร</p>
+                    <h4>คุณสมบัติ</h4>
+                        <p style="text-indent: 2.5em">ช่วยบำรุงหัวใจให้ชุ่มชื่น และช่วยลดอัตราการเต้นของหัวใจ การดื่มน้ำใบเตยจะช่วยดับกระหายคลายร้อนได้เป็นอย่างดี 
+                            เพราะใบเตยมีกลิ่นหอมเย็น ดื่มแล้วจึงรู้สึกสดชื่น ผ่อนคลาย การดื่มน้ำใบเตยช่วยแก้อาการอ่อนเพลียของร่างกายได้ มีส่วนช่วยในการปรับสมดุลภายในร่างกาย</p>
+                        
+                    <h4>ข้อควรระวัง</h4>
+                        <p style="text-indent: 2.5em">ถึงแม้ว่าใบเตย จะเป็นพืชจากธรรมชาติ แต่ก็ควรบริโภคในปริมาณที่เหมาะสม และไม่บริโภคเป็นระยะเวลานานจนเกินไป
+                             ผู้ที่มีโรคประจำตัวหรือสตรีมีครรภ์ และสตรีให้นมบุตรควรปรึกษาแพทย์ 
+                            และผู้เชี่ยวชาญก่อนบริโภค หรือ ใช้ผลิตภัณฑ์ใดๆ จากใบเตย เพราะสารเคมีในเตยอาจส่งผลกระทบต่อสุขภาพได้ 
+                       </p>
+                    </p>
+                    <h4>เมนูแนะนำ</h4>
+                    <p> - สังขยาใบเตย<br>
+                        - เค้กใบเตยมะพร้าวอ่อน
+                        
+                   
+                   
+                        
+                     
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slides[slideIndex].style.display = "block"; 
+        }
+        </script>
+</div>
+</body>
+</html>
+{% endblock %}

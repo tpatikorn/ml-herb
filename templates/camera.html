@@ -1,0 +1,234 @@
+{% extends  "Navbar.html"%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700&family=Itim&family=Noto+Serif+Thai:wght@100..900&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Camera Mode</title>
+    <link rel="stylesheet" href="{{url_for("ml-herb.static", filename="css/camera.css") }}">
+</head>
+<body>
+<div class="container-model">
+    <!-- <img src="/static/images/tee.png"> -->
+    <div id="top-image-container"></div>
+    <div class="card-model">
+        <div class="text">วิเคราะห์สมุนไพรด้วยโมเดล</div>
+        <div id="webcam-container"></div>
+        <div id="bar-chart"></div>
+        <button id="toggle-button" onclick="toggleWork()">หยุดการทำงาน</button>
+    </div>
+</div>
+<!-- รังผึ้ง -->
+<svg class="honeycomb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291.95 291.04">
+  <polygon class="hc-1" class="cls-1" points="128.18 142.42 58.1 129.55 34.19 62.42 80.38 8.16 150.46 21.02 174.37 88.15 128.18 142.42"/>
+  <polygon class="hc-2" class="cls-1" points="237.25 235.53 167.16 222.66 143.26 155.53 189.44 101.27 259.53 114.13 283.44 181.26 237.25 235.53"/>
+  <polygon class="hc-3" class="cls-1" points="102.51 282.88 32.42 270.02 8.52 202.89 54.7 148.63 124.79 161.49 148.69 228.62 102.51 282.88"/>
+</svg>  
+<div class="context">
+  <h1>หมายเหตุ</h1>
+  <p>-เว็บแอพพลิเคชั่น Ma-o Herb สามารถวิเคราะห์พืชสมุนไพรได้เพียง 20 ชนิด<br>
+     -เนื่องจากมีข้อจำกัดการเข้าใช้งาน ทางเว็บแอพพลิเคชั่น <br> Ma-o Herb ยังไม่สามารถเข้าใช้งานในระบบปฏิบัติการ IOS ได้ </p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+<script type="text/javascript">
+    const URL = "./static/";
+    let model, webcam, maxPredictions;
+    let doWork = true;
+
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        model = await tf.loadGraphModel(modelURL);
+        maxPredictions = 20;
+
+        const flip = false; 
+        webcam = new tmImage.Webcam(280, 280, flip); 
+        await webcam.setup({ facingMode: "environment" }); 
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+    }
+
+    async function loop() {
+        if(doWork) {
+            const fps = 10;
+            webcam.update();
+            await predict();
+            setTimeout(() => {
+                window.requestAnimationFrame(loop);
+            }, 1000 / fps);
+        }
+    }
+
+    const classNames = ["ขี้เหล็ก", "มะระขี้นก", "มะม่วงหาวมะนาวโห่", "โหระพา", "ขึ้นฉ่าย",
+        "กุ๋ยช่าย","ชะอม", "ผักชี", "กระชาย", "ข่า", 
+        "ขิง","ตำลึง", "กะเพรา", "มะกรูด", "ตะไคร้", 
+        "มะนาว","ใบเตย", "ต้นหอม", "ขมิ้น", "ชะพลู"];
+
+    async function predict() {
+        const input = tf.tidy(() => {
+            let img = tf.browser.fromPixels(webcam.canvas).resizeBilinear([180, 180]);
+            img = tf.cast(img, 'float32');
+            return img.expandDims(0);
+        });
+        const prediction = await model.predict(input);
+        const prediction2 = await prediction.array();
+
+        let results = [];
+        for (let i = 0; i < maxPredictions; i++) {
+            results.push({
+                name: classNames[i],
+                probability: prediction2[0][i]
+            });
+        }
+
+        results = results.sort((a, b) => b.probability - a.probability).slice(0, 1);
+        updateBarChart(results);
+
+        // เพิ่มการเรียกฟังก์ชันเพื่ออัปเดตรูปสมุนไพรที่มีความน่าจะเป็นสูงที่สุด
+        if(results[0].probability >= 0.6) {
+            updateTopImage(results[0].name);
+        } else {
+            const topImageContainer = document.getElementById("top-image-container");
+            topImageContainer.innerHTML = "";
+        }
+
+        // หยุดการทำงานเมื่อถึง 90% หรือหยุดเมื่อกดปุ่ม
+        if (results[0].probability >= 0.9 || !doWork) {
+            // console.log(results[0]);
+            updateBarChart(results);  // แสดงค่า span ทุกค่าหลังจากหยุดทำงาน
+            updateTopImage(results[0].name);
+            toggleWork(false);
+        }
+    }
+
+
+    const fileMap = {
+        "ขี้เหล็ก": "Lam",
+        "มะระขี้นก": "Marakinoc",
+        "มะม่วงหาวมะนาวโห่": "Mamuang",
+        "โหระพา": "basil",
+        "ขึ้นฉ่าย": "Celery",
+        "กุ๋ยช่าย": "Leek",
+        "ชะอม": "Senegalia",
+        "ผักชี": "Cilantro",
+        "กระชาย": "Fingerroot",
+        "ข่า": "Galanga",
+        "ขิง": "Ginger",
+        "ตำลึง": "Ivy",
+        "กะเพรา": "Ocimum",
+        "มะกรูด": "Kaffir",
+        "ตะไคร้": "Lapine",
+        "มะนาว": "Lime",
+        "ใบเตย": "Pandan",
+        "ต้นหอม": "Tonhom",
+        "ขมิ้น": "Turmeric",
+        "ชะพลู": "Wildbetat"
+    };
+
+    function updateBarChart(results) {
+    const barChart = document.getElementById("bar-chart");
+    barChart.innerHTML = "";
+
+    results.forEach(result => {
+        const bar = document.createElement("div");
+        bar.className = "bar";
+        const label = document.createElement("div");
+        label.className = "bar-label";
+        label.textContent = result.name;
+        
+        const barFill = document.createElement("div");
+        barFill.className = "bar-fill";
+
+        const infoButton = document.createElement("button");
+        infoButton.className = "info-button";
+        infoButton.textContent = "ข้อมูลเพิ่มเติม";
+        infoButton.onclick = function() {
+            window.location.href = `/${fileMap[result.name]}`;
+        };
+        infoButton.style.visibility = "hidden";
+
+        if (doWork && result.probability < 0.6) {
+            // แสดง "กำลังตรวจสอบ" ถ้าค่าต่ำกว่า 50% และ doWork เป็น true
+            label.textContent = "";
+            const text = document.createElement("div");
+            text.className = "loading-text";
+            text.textContent = "กำลังตรวจสอบ...";
+            barFill.appendChild(text);
+            barFill.style.display = "flex";
+            barFill.style.alignItems = "center";
+            barFill.style.justifyContent = "center";
+        } else {
+            // แสดงค่าเปอร์เซ็นต์เมื่อ doWork เป็น false หรือค่ามากกว่า 50%
+            const span = document.createElement("span");
+            span.className = result.name;
+            span.style.width = `${result.probability * 100}%`;
+            span.textContent = `${(result.probability * 100).toFixed(2)}%`;
+            barFill.appendChild(span);
+        }
+
+
+        bar.appendChild(label);
+        bar.appendChild(barFill);
+        bar.appendChild(infoButton);
+        barChart.appendChild(bar);
+    });
+}
+
+
+
+
+    function updateTopImage(name) {
+        const topImageContainer = document.getElementById("top-image-container");
+        topImageContainer.innerHTML = "";
+
+        const img = document.createElement("img");
+        img.src = `./static/images/${fileMap[name]}.jpg`;
+        img.alt = name;
+        img.style.width = "100%";
+        img.style.height = "100%";
+        img.className = "top-herb-image";
+        topImageContainer.appendChild(img);
+    }
+
+    function toggleWork(changeTo = null) {
+        // console.log("before: " + doWork + "----" + changeTo);
+        if(changeTo == null) {
+            doWork = !doWork;
+        } else {
+            doWork = changeTo;
+        }
+        // console.log("after:  " + doWork + "----" + changeTo);
+        document.getElementById('toggle-button').textContent = doWork ? 'หยุดการทำงาน' : 'เริ่มการทำงาน';
+        if (doWork) {   
+            window.requestAnimationFrame(loop);
+        } else {
+            if(document.getElementsByClassName("loading-text").length > 0) {
+                document.getElementsByClassName("loading-text")[0].innerHTML = "ตรวจสอบไม่พบ";
+                document.getElementsByClassName("bar-label")[0].innerHTML = "";
+                const topImageContainer = document.getElementById("top-image-container");
+                topImageContainer.innerHTML = "";
+            } else {
+                document.getElementsByClassName("info-button")[0].style.visibility = "visible";
+            }
+        }
+    }
+
+    init();
+</script>
+</body>
+</html>
+{% endblock %}

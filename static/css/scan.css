@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100%;
+}
+
+/* Navigation Styles ส่วนบนเว็บ */
+nav {
+    background-color: #0e3e0e;
+    border-bottom: 2px solid #555;
+    position: sticky;
+    top: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-con {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.logo h3 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+}
+
+.topic ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    position: relative;
+    margin: 0;
+}
+
+.topic ul li {
+    margin-left: 20px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 14px;
+    text-decoration: none;
+    
+}
+
+.topic ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Dropdown Styles */
+.topic ul ul {
+    display: none;
+    position: absolute;
+    background-color: #0e3e0e;
+    min-width: 150px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+    margin: 0;
+   
+}
+
+.topic ul li:hover > ul {
+    display: block;
+  
+}
+/* เมื่อเมาส์วางตรงแถบ */
+.topic ul li:hover{
+    background-color: #114d11;
+}
+
+.topic ul ul li {
+    display: block;
+}
+
+.topic ul ul li:hover {
+    background-color: #8c8b8b;
+}
+.topic ul ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 6px 10px;
+    text-align: center;
+    
+}
+/* ****************************************** */
+
+.card {
+    margin-top: 60px;
+    max-width: 540px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    left: 35%;
+    
+}
+
+.camera img {
+    width: 100%;
+    height: auto;
+}
+
+.text-box {
+    padding: 20px;
+    text-align: center;
+}

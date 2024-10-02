@@ -1,0 +1,96 @@
+{% extends  "Navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Itim&family=Noto+Serif+Thai:wght@100..900&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>กระชาย</title>
+    <link rel="stylesheet" href="/css/Lam.css">
+    <!-- <script src="Lam.js"></script> -->
+</head>
+<body>
+<div class="bg">
+    <div class="content-box">
+        <div class="container-box">   
+            <div class="card">
+                <h2>กระชาย</h2>
+                <div class="cimg">
+                    <div class="slide-container">
+                        <div class="slide fade">
+                            <img src="https://s.isanook.com/he/0/ud/1/7213/finger-root.jpg" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://png.pngtree.com/png-clipart/20240220/original/pngtree-isolated-krachai-thai-herb-root-graphed-on-photo-png-image_14364587.png" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://www.doctor.or.th/sites/default/files/maxresdefault.jpg" style="width:100%">
+                        </div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="cdetail">
+                    <p class="hover-text">แตะเพื่อดูข้อความ</p>
+                    <div class="ddetail">
+                    <h4>ข้อมูลเบื่องต้น</h4>
+                    <p style="text-indent: 2.5em">
+                        ต้นกระชาย จัดเป็นไม้ล้มลุก มีเหง้าสั้น แตกหน่อได้ รากอวบ รูปทรงกระบอก หรือ 
+                        รูปไข่ค่อนข้างยาว ปลายเรียว กว้าง 1-2 ซม. ยาว 4-10 ซม. ออกเป็นกระจุก ผิวสีน้ำตาลอ่อน เนื้อกระชาย ในสีเหลือง มีกลิ่นเฉพาะตัว</p>
+                    <h4>คุณสมบัติ</h4>
+                        <p style="text-indent: 2.5em">  กระชาย มีสรรพคุณคล้ายโสม หมอโบราณเรียกว่า “โสมไทย ” หัว และราก ขับปัสสาวะ แก้กระษัย เบาเหลือง แดง เจ็บปวดบั้นเอว บำรุงกำหนัด บำรุงหัวใจ บำรุงกำลัง แก้ใจสั่นหวิว 
+                            ขับปัสสาวะ หัวใช้เผาไฟฝนรับประทานกับน้ำปูนใส เป็นยาแก้บิด แก้โรคบังเกิดในปาก แก้มุตะกิต</p>
+                        
+                    <h4>ข้อควรระวัง</h4>
+                        <p style="text-indent: 2.5em">ผู้ที่แพ้ขิง ข่า ขมิ้น ไพล ควรหลีกเลี่ยงการใช้ กระชายเพราะเป็นพืชที่อยู่ในวงศ์เดียวกัน ซึ่งอาจมีสารออกฤทธิ์คล้ายกัน 
+                            กระชายเป็นพืชที่มีสรรพคุณทางยา รสเผ็ดร้อน ดังนั้นจึงควรระมัดระวังในการใช้เพราะอาจทำให้เกิดการแพ้ หรือ ระคายเคืองได้ กระชายที่จะให้สรรพคุณทางยาได้อย่างเต็มที่นั้น
+                             ควรเป็นกระชายที่มีอายุ 6 เดือนขึ้นไป และควรเป็นกระชายที่เก็บเกี่ยวในฤดูแล้ง เพราะเหง้าจะสะสมสารออกฤทธิ์ไว้เต็มที่แล้ว
+                       </p>
+                    </p>
+                    <h4>เมนูแนะนำ</h4>
+                    <p> - หมูเด้งผัดฉ่า<br>
+                        - แกงป่ากระดูกหมู
+                   
+                   
+                   
+                        
+                     
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slides[slideIndex].style.display = "block"; 
+        }
+        </script>
+</div>
+</body>
+</html>
+{% endblock %}

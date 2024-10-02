@@ -1,0 +1,341 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100%;
+}
+.btn1{
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    background: #09e769eb;
+    width: auto;
+    height: auto;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transfrom;
+    transition-property: box-shadow, transfrom;
+    margin-top: 2rem;
+    
+
+
+}
+.btn1:hover, .btn1:focus ,btn1:active{
+    box-shadow: 0 0 20px rgb(170, 241, 119);
+    -webkit-transfrom: scale(1.1);
+    transform: scale(1.1);
+    background: #09e769eb;
+    color: #fff;
+}
+/* ********************************************************************** */
+.text {
+    flex: 1; /* ทำให้ text ยืดเต็มพื้นที่ของ card */
+}
+.text h1{
+    font-size: 50px;
+    color: #0e3e0e;
+    font-family: "Itim", cursive;
+    font-weight: 600;
+}
+.text h3 {
+    font-size: 30px;
+    color: black;
+    font-family: "Pridi", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.text p{
+    font-size: 20px;
+    color: black;
+    font-family: "Pridi", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.text button{
+    background-color: #0e3e0e;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.15);  
+}
+
+.text button:hover{ background-color: #f8f9fa;
+}
+
+.image {
+    flex: 1; /* ทำให้ image ยืดเต็มพื้นที่ของ card */
+    text-align: right; /* จัดวางรูปภาพที่ด้านขวาของ card */
+    max-width: 100%;
+    
+}
+
+.image img {
+    width: 80%; /* กำหนดขนาดสูงสุดของรูปภาพให้ไม่เกินพื้นที่ของ card */
+    height: auto; /* ปรับขนาดความสูงของรูปภาพตามอัตราส่วน */
+    border-radius: 12px ;
+}
+
+
+/* ส่วนกลางเว็บ */
+section {
+    padding: 20px;
+}
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    border: 10px;
+    border-radius: 10px; /* กำหนดขอบโค้งให้ card */
+    overflow: hidden; /* บังเอฟเฟคที่เกินขอบโค้ง */
+}
+
+.content-block {
+    display: flex;
+    align-items: center;
+    max-width: 80%; /* ปรับขนาดของ card ตามต้องการ */
+    border: none;
+    border-radius: 10px; /* กำหนดมุมขอบของ card */
+    padding: 20px; /* กำหนดระยะห่างของข้อความและรูปภาพใน card */
+}
+
+.second-content {
+    margin-top: 80px;
+    padding: 20px;
+    align-items: center;
+    
+}
+.second-content .content{
+    margin: 0 auto;
+    text-align: center;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 25px;
+    margin-top: 100px;
+    column-gap: 5px;
+    justify-content: center;
+    align-items: center;
+
+}
+.card{
+    max-width: 1150px ;
+    width: 22rem;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    /* margin-bottom: 20px; */
+    position: static;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.15);  
+}
+.content h1 {
+    font-family: "Itim", cursive;
+    font-weight: 600;
+    font-size: 50px;
+}
+.card img {
+
+    border-radius: 4px;
+    margin-bottom: 10px;
+    
+}
+.card h3 {
+    margin-top: 20px;
+    font-family: "Itim", cursive;
+    font-weight: 400;
+    font-size: 30px;
+}
+.card p {
+    font-family: "Pridi", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 20px;
+}
+
+
+
+/* ส่วนล่างเว็บ */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: static;
+    bottom: 0px;
+    width: 100%;
+    margin: 0;
+}
+
+/* **********popub************** */
+
+.myImg {
+    
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .myImg:hover {opacity: 0.7;}
+  
+  /* The Modal (background) */
+  .myModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 4rem;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 900px;
+  }
+  /* Caption of Modal Image */
+  .caption {
+    margin: auto;
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+  }
+  
+  /* Add Animation */
+  .modal-content, .caption {  
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+  }
+  
+  @-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+  }
+  
+  @keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+/* *******responsive-css******** */
+
+
+
+@media only screen and (min-width: 600px) and (max-width: 1000px){
+    .content-block {
+        flex-direction: column;
+        
+    }
+    .image{
+        width: 100%; /* กำหนดขนาดสูงสุดของรูปภาพให้ไม่เกินพื้นที่ของ card */
+        height: auto; /* ปรับขนาดความสูงของรูปภาพตามอัตราส่วน */
+        border-radius: 12px ;
+        order: -1;
+        margin-left: -10rem;
+       
+        
+    }
+    .grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .card{
+        width: 80%; 
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+    .content-block {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .image {
+        text-align: start;
+        order: -1;
+        height: auto; /* ปรับขนาดความสูงของรูปภาพตามอัตราส่วน */
+        border-radius: 12px ;
+        margin-bottom: 20px;
+        margin: 0;
+        
+    }
+    .image img{
+        width: 100%;
+    }
+    
+    .grid{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .card{
+        width: 80%; 
+    }
+    /* .card img{
+        width: 100%;
+    } */
+    .modal-content {
+        width: 100%;
+        margin-top: 5rem;
+      }
+      
+      
+}
+
+
+ 

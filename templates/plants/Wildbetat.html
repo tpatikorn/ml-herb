@@ -1,0 +1,90 @@
+{% extends  "Navbar.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Itim&family=Noto+Serif+Thai:wght@100..900&family=Pridi:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>ใบชะพลู</title>
+    <link rel="stylesheet" href="/css/Lam.css">
+    <!-- <script src="Lam.js"></script> -->
+</head>
+<body>
+<div class="bg">
+    <div class="content-box">
+        <div class="container-box">   
+            <div class="card">
+                <h2>ใบชะพลู</h2>
+                <div class="cimg">
+                    <div class="slide-container">
+                        <div class="slide fade">
+                            <img src="https://kaset.today/wp-content/uploads/2021/01/ID_41066_5ab8b37fdf721.jpg" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://www.disthai.com/images/editor/%E0%B8%8A%E0%B8%B0%E0%B8%9E%E0%B8%A5%E0%B8%B922.png" style="width:100%">
+                        </div>
+                        <div class="slide fade">
+                            <img src="https://down-th.img.susercontent.com/file/cc6b6c37176cd2bf5ededa13df2a20e3" style="width:100%">
+                        </div>
+                    </div>
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="cdetail">
+                    <p class="hover-text">แตะเพื่อดูข้อความ</p>
+                    <div class="ddetail">
+                    <h4>ข้อมูลเบื่องต้น</h4>
+                    <p style="text-indent: 2.5em">
+                        ใบมีลักษณะคล้ายใบพลูขนาดย่อม ใบจะเป็นสีเขียวแก่ ลักษณะของใบเป็นใบเดี่ยว เรียงสลับ รูปร่างใบเป็นรูปหัวใจ เส้นใบชัดเจน 5-7 เส้น 
+                        ปลายใบแหลมผิวใบไม่เรียบ ขนาด 3-4.5 ซม. กว้าง 2-3 ซม. ใบใหญ่มีขนาดกว้าง 15 ซม. ยาว 17 ซม. ก้านใบยาว 1-5 ซม</p>
+                    <h4>คุณสมบัติ</h4>
+                        <p style="text-indent: 2.5em">มีรสเผ็ดเล็กน้อย มีสรรพคุณที่ช่วยบำรุงธาตุ ขับลม แก้อาการท้องอืดท้องเฟ้อ และช่วยในการขับเสมหะ</p>
+                        
+                    <h4>ข้อควรระวัง</h4>
+                        <p style="text-indent: 2.5em">หากรับประทานในปริมาณมากหรือติดต่อกันเป็นเวลานาน แคลเซียมที่มีอยู่ในใบชะพลูจะเปลี่ยนเป็นแคลเซียมออกซาเลต(Oxalate) 
+                            ซึ่งสารชนิดนี้เป็นสาเหตุที่ทำให้เกิดโรคนิ่วในไตได้ ดังนั้นคุณจึงควรดื่มน้ำตามมาก ๆ เพื่อให้สารออกซาเลตเจือจางลง</p>
+                    </p>
+                    <h4>เมนูแนะนำ</h4>
+                    <p> - แกงกะทิปลาทูใบชะพลู <br>
+                        - เมี่ยงคำ <br>
+                        - หมูย่างใบชะพลู 
+                     
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+    
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n >= slides.length) { slideIndex = 0 }
+            if (n < 0) { slideIndex = slides.length - 1 }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+            }
+            slides[slideIndex].style.display = "block"; 
+        }
+        </script>
+</div>
+</body>
+</html>
+{% endblock %}

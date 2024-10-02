@@ -1,0 +1,94 @@
+{% extends  "Navbar.html"%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เกี่ยวกับ</title>
+    <link rel="stylesheet" href="{{ url_for("ml-herb.static", filename="css/About.css")}}">
+    <script src="https://kit.fontawesome.com/351b1fa021.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../static/images/Logo_Web.png" type="image/png"sizes="32x32">
+</head>
+<body>
+    <div class="context">
+        <h1>โดยสรุป</h1>
+        <p>MA-O Herb คือ เว็บแอปพลิเคชันที่ใช้สำหรับการจำแนกสมุนไพร โดยมีจุดประสงค์เพื่อเพิ่มความสะดวก ความเข้าใจให้แก่ผู้ที่ไม่ทราบว่าสมุนไพรที่ตนเองต้องการคืออะไร โดยผ่านวิธีการเรียนรู้ด้วยเครื่อง เพื่อใช้งานเว็บแอพพลิเคชั่นดังกล่าวผู้ใช้เพียงแค่ใช้กล้องโทรศัพท์แสกนสมุนไพรที่ต้องการ เพื่อใช้งาน</p>
+    </div>
+    <div class="box">
+        <div class="text-box">
+            <h2>คณะผู้จัดทำ</h2>
+        </div>
+        <div class="grid">
+            <div class="ps">
+                <div class="card">
+                    <div class="circle-photo">
+                    <img src="{{ url_for("ml-herb.static", filename="images/yamin.jpg")}}" alt="" class="t" width="180" height="180px">
+                    </div>
+                <div class="paragarph-center">
+                <h3 class="title">นาย เจษฎาพร บุตรคำโชติ</h3>
+                <p class="positon">ITS16441N</p>
+                <h5>มหาวิทยาลัยเทคโนโลยีราชมงคลสุวรรณภูมิ <br>
+                    ศูนย์นนทบุรี</h5>
+                </div>
+                <div class="between">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+            </div>
+            <div class="ps">
+                <div class="card">
+                    <div class="circle-photo">
+                    <img src="{{ url_for("ml-herb.static", filename="images/aomsin.jpg")}}" alt="" class="t" width="auto" height="180px">
+                    </div>
+                <div class="paragarph-center">
+                <h3 class="title">นาย ปิยะพงศ์ มีเนตรตรี</h3>
+                <p class="positon">ITS16441N</p>
+                <h5>มหาวิทยาลัยเทคโนโลยีราชมงคลสุวรรณภูมิ <br>
+                    ศูนย์นนทบุรี</h5>
+                </div>
+                <div class="between">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+            </div>
+            <div class="ps">
+                <div class="card">
+                    <div class="circle-photo">
+                    <img src="{{ url_for("ml-herb.static", filename="images/Oohm.png")}}" alt="" class="t" width="180" height="180px">
+                    </div>
+                <div class="paragarph-center">
+                <h3 class="title">นาย  สืบพงศ์  พรหมเกิด</h3>
+                <p class="positon">ITS16441N</p>
+                <h5>มหาวิทยาลัยเทคโนโลยีราชมงคลสุวรรณภูมิ <br>
+                    ศูนย์นนทบุรี</h5>
+                </div>
+                <div class="between">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>    
+
+<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+
+</body>
+</html>
+{% endblock %}
