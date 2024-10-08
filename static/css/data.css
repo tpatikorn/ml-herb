@@ -2,7 +2,7 @@
 
 body {
     margin: 0 auto;
-    background-image: url("/static/images/backgrond.jpg");
+    background-image: url("../images/backgrond.jpg");
     -webkit-background-size: cover;
     background-size: cover;
     background-attachment: fixed;
@@ -87,7 +87,6 @@ h4 {
 }
 
 .grid .box {
-    width: 200px;
     height: 200px;
     background-position: center;
     background-size: cover;
@@ -204,6 +203,31 @@ h4 {
 
 
 /* *********Responsive mobie phone******* */
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        margin: 20px 0 0;
+        padding: 0;
+    }
+
+    .card-box {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container--1 {
+        max-width: 100%;
+    }
+
+    h2 {
+        margin-left: 20px;
+    }
+
+}
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
     .grid {
