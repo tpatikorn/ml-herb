@@ -184,17 +184,20 @@ h2 {
     background-color: white;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
     border-radius: 25px;
-    
+
 }
-h3{
+
+h3 {
     position: relative;
     margin-bottom: 20px;
-   
+
 }
-h5{
+
+h5 {
     position: relative;
     margin-top: 20px;
 }
+
 .paragarph-center {
     text-align: center;
 }
@@ -237,28 +240,32 @@ h5{
 }
 
 .between i {
-    font-size:2rem; /* ขนาดไอคอนใหญ่ */
+    font-size: 2rem; /* ขนาดไอคอนใหญ่ */
     margin: 0 10px; /* ระยะห่างระหว่างไอคอน */
     color: #333; /* สามารถปรับสีตามต้องการ */
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
-    .card{
-    width: 240px;
-    height: 320px;
+    .card {
+        width: 240px;
+        height: 320px;
     }
-    .context{
+
+    .context {
         width: 80%;
     }
 }
-@media only screen and (max-width: 600px){
-    .grid{
-        grid-template-columns: repeat(1,1fr);
+
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
     }
-    .card{
+
+    .card {
         margin-top: 7rem;
     }
-    .context{
+
+    .context {
         width: 80%;
 
     }

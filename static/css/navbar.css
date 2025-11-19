@@ -40,15 +40,12 @@ nav {
 }
 
 .topic li {
-    /* margin-left: 10px; */
     display: block;
     color: white;
     text-align: center;
     text-decoration: none;
-    height: 40px;
     margin: 0;
-    padding: 0 5px;
-
+    padding: 10px;
 }
 
 .topic a {

@@ -1,9 +1,8 @@
-from flask import Flask, render_template, Response, Blueprint
 import cv2
+from flask import Flask, render_template, Response, Blueprint
 
 bp = Blueprint('ml-herb', __name__, template_folder='templates', static_folder='static')
 
-# camera_url = ''
 cap = cv2.VideoCapture(0)
 
 
@@ -26,19 +25,14 @@ def generate_frames():
 
 
 @bp.route('/')
-@bp.route('/Home')
+@bp.route('/home')
 def index():
     return render_template('index.html')
 
 
-@bp.route('/Data')
+@bp.route('/data')
 def data():
-    return render_template('Data.html')
-
-
-@bp.route('/About')
-def about():
-    return render_template('About.html')
+    return render_template('data.html')
 
 
 @bp.route('/camera')
@@ -46,109 +40,40 @@ def camera():
     return render_template('camera.html')
 
 
-@bp.route('/Lam')  # ขี้เหล็ก
-def Lam():
-    return render_template('plants/Lam.html')
+@bp.route('/get_plant/<plant>')
+def get_plant(plant):
+    # "Lam":  # ขี้เหล็ก
+    # "Wildbetat":  # ชะพลู
+    # 'Kaffir':  # มะกรูด
+    # 'Senegalia':  # ชะอม
+    # 'Cilantro':  # ผักชี
+    # 'basil':  # โหระพา
+    # 'Ocimum':  # กะเพรา
+    # 'Celery':  # ขึ้นฉ่าย
+    # 'Leek':  # กุยช่าย
+    # 'Pandan':  # เตย
+    # 'Ivy':  # ตำลึง
+    # 'Galanga':  # ข่า
+    # 'Turmeric':  # ขมิ้น
+    # 'Fingerroot':  # กระชาย
+    # 'Ginger':  # ขิง
+    # 'Lapine':  # ตะไคร้
+    # 'Tonhom':  # ต้นหอม
+    # 'Lime':  # มะนาว
+    # 'Mamuang':  # มะม่วงหาวมะนาวโห่
+    # 'Marakinoc':  # มะระขี้นก
+    template_file = f'plants/{plant}.html'
+    return render_template(template_file)
 
 
-@bp.route('/Wildbetat')  # ชะพลู
-def Wildbetat():
-    return render_template('plants/Wildbetat.html')
+@bp.route('/about')
+def about():
+    return render_template('about.html')
 
 
-@bp.route('/Kaffir')  # มะกรูด
-def Kaffir():
-    return render_template('plants/Kaffir.html')
-
-
-@bp.route('/Senegalia')  # ชะอม
-def Senegalia():
-    return render_template('plants/Senegalia.html')
-
-
-@bp.route('/Cilantro')  # ผักชี
-def Cilantro():
-    return render_template('plants/Cilantro.html')
-
-
-@bp.route('/basil')  # โหระพา
-def basil():
-    return render_template('plants/basil.html')
-
-
-@bp.route('/Ocimum')  # กะเพรา
-def Ocimum():
-    return render_template('plants/Ocimum.html')
-
-
-@bp.route('/Celery')  # ขึ้นฉ่าย
-def Celery():
-    return render_template('plants/Celery.html')
-
-
-@bp.route('/Leek')  # กุยช่าย
-def Leek():
-    return render_template('plants/Leek.html')
-
-
-@bp.route('/Pandan')  # เตย
-def Pandan():
-    return render_template('plants/Pandan.html')
-
-
-@bp.route('/Ivy')  # ตำลึง
-def Ivy():
-    return render_template('plants/Ivy.html')
-
-
-@bp.route('/Galanga')  # ข่า
-def Galanga():
-    return render_template('plants/Galanga.html')
-
-
-@bp.route('/Turmeric')  # ขมิ้น
-def Turmeric():
-    return render_template('plants/Turmeric.html')
-
-
-@bp.route('/Fingerroot')  # กระชาย
-def Fingerroot():
-    return render_template('plants/Fingerroot.html')
-
-
-@bp.route('/Ginger')  # ขิง
-def Ginger():
-    return render_template('plants/Ginger.html')
-
-
-@bp.route('/Lapine')  # ตะไคร้
-def Lapine():
-    return render_template('plants/Lapine.html')
-
-
-@bp.route('/Tonhom')  # ต้นหอม
-def Tonhom():
-    return render_template('plants/Tonhom.html')
-
-
-@bp.route('/Lime')  # มะนาว
-def Lime():
-    return render_template('plants/Lime.html')
-
-
-@bp.route('/Mamuang')  # มะม่วงหาวมะนาวโห่
-def Mamuang():
-    return render_template('plants/Mamuang.html')
-
-
-@bp.route('/Marakinoc')  # มะระขี้นก
-def Marakinoc():
-    return render_template('plants/Marakinoc.html')
-
-
-@bp.route('/About')
-def About():
-    return render_template('About.html')
+@bp.route('/mobile')
+def mobile():
+    return render_template('mobile.html')
 
 
 app = Flask(__name__)
@@ -156,4 +81,4 @@ app.register_blueprint(bp, url_prefix='/ml-herb')
 app.config['APPLICATION_ROOT'] = '/ml-herb'
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8084)
+    app.run(debug=True, port=18080)

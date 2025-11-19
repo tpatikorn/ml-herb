@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for("ml-herb.static", filename="css/navbar.css") }}">
+
+    <link rel="icon" type="image/jpg" href="{{ url_for("ml-herb.static", filename="images/logo2.jpg") }}">
+    <title></title>
+</head>
+<body>
+<nav>
+    <div class="container">
+        <div class="nav-con">
+            <div class="logo">
+                <h3>ML-Herb</h3>
+            </div>
+
+            <ul class="topic" id="mymenu">
+                <li onclick="location.href='/ml-herb/home'">หน้าแรก</li>
+                <li onclick="location.href='/ml-herb/data'">สมุนไพร</li>
+                <li onclick="location.href='/ml-herb/about'">เกี่ยวกับ</li>
+                <li onclick="location.href='/ml-herb/mobile'">การพัญนาต่อเป็น Android app</li>
+
+                <a href="/ml-herb/camera" class="btn">เริ่มต้นใช้งาน</a>
+            </ul>
+
+            <div class="ham-menu" onclick="toggleham(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </div>
+</nav>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+<script>
+
+    function toggleham(x) {
+        x.classList.toggle("change");
+        let myMenu = document.getElementById('mymenu')
+        if (myMenu.className === 'topic') {
+            myMenu.className += 'menu-active'
+        } else {
+            myMenu.className = 'topic'
+        }
+    }
+
+</script>
+</body>
+</html>

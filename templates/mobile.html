@@ -1,0 +1,38 @@
+{% extends  "navbar.html" %}
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>เกี่ยวกับ</title>
+        <link rel="stylesheet" href="{{ url_for("ml-herb.static", filename="css/about.css") }}">
+        <script src="https://kit.fontawesome.com/351b1fa021.js" crossorigin="anonymous"></script>
+        <link rel="icon" href="../static/images/logo1.png" type="image/png" sizes="32x32">
+    </head>
+    <body>
+    <div class="context">
+        <h1>การพัญนาต่อเป็น Android app</h1>
+        <p>โปรเจ็กนี้ได้ถูกพัฒนาต่อ โดยเพิ่มจากสมุนไพรไทย 20 ชนิดเป็น 40 ชนิด และได้มีการพัฒนา <strong><a
+                href="{{ url_for("static", filename="HerbScan_1.0.0.apk") }}">Android app (175 MB)</a></strong>
+            ที่สามารถทำงานอย่าง offline ได้ โดยมีนายถนัฐชัย ฝืดสูงเนิน และนายทวีวัฒน์ ตระการสง่า
+            นักศึกษาสาขาวิทยาการคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีราชมงคลสุวรรณภูมิเป็นผู้พัฒนา</p>
+    </div>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    </body>
+    </html>
+{% endblock %}

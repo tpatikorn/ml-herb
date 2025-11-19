@@ -1,5 +1,6 @@
-import numpy as np
 import os
+
+import numpy as np
 import tensorflow as tf
 from sklearn.metrics import confusion_matrix
 from tensorflow.math import argmax

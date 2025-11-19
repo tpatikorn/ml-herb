@@ -1,0 +1,66 @@
+{% extends  "navbar.html" %}
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ข้อมูลสมุนไพรไทย</title>
+        <link rel="stylesheet" href="{{ url_for("ml-herb.static", filename="css/data.css") }}">
+    </head>
+    <body>
+    <div class="container--1">
+        <div class="main">
+            <div class="subtopic">
+                <h2>ส่วนประกอบสมุนไพร</h2>
+            </div>
+        </div>
+        {% set plants = [
+        ("ใบ", [
+            ["กะเพรา", "Ocimum"],
+            ["กุ๋ยช่าย", "Leek"],
+            ["ขี้เหล็ก", "Lam"],
+            ["ชะพลู", "Wildbetat"],
+            ["ชะอม", "Senegalia"],
+            ["ตำลึง", "Ivy"],
+            ["เตย", "Pandan"],
+            ["มะกรูด", "Kaffir"],
+            ["โหระพา", "basil"]]),
+        ("ราก", [
+            ["กระชาย", "Fingerroot"],
+            ["ข่า", "Galanga"],
+            ["ขิง", "Ginger"],
+            ["ขมิ้น", "Turmeric"]]),
+        ("ลำต้น", [
+            ["ขึ้นฉ่าย", "Celery"],
+            ["ต้นหอม", "Tonhom"],
+            ["ตะไคร้", "Lapine"],
+            ["ผักชี", "Cilantro"]]),
+        ("ผล", [
+            ["มะนาว", "Lime"],
+            ["มะม่วงหาวมะนาวโห่", "Mamuang"],
+            ["มะระขี้นก", "Marakinoc"]])
+        ] %}
+        {% for plant_part in plants %}
+            <div class="main">
+                <div class="subtopic">
+                    <h5>{{ plant_part[0] }}</h5>
+                </div>
+            </div>
+            <div class="card-box grid">
+                {% for plant in plant_part[1] %}
+                    <a href="{{ plant[1] }}">
+                        <article class="box"
+                                 style="background-image:url('{{ url_for("ml-herb.static", filename="images/"+plant[1]+".jpg") }}')">
+                            <h4>{{ plant[0] }}</h4>
+                        </article>
+                    </a>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+    </div>
+
+    </body>
+    </html>
+{% endblock %}

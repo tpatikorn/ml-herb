@@ -1,10 +1,11 @@
+import os
+
 import keras
 import numpy as np
-import os
 import tensorflow as tf
+import tensorflowjs as tfjs
 from sklearn.metrics import confusion_matrix
 from tensorflow.math import argmax
-import tensorflowjs as tfjs
 
 PATH = 'D:/Projects/ml-herb/training_images'
 test = 'D:/Projects/ml-herb/test_images'
